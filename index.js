@@ -22,14 +22,24 @@
     var skinny = imgRatio < cRatio;
     if (skinny) {
       console.log('skinny');
-      ctx.drawImage(img, 0, 0, c.height * imgRatio, c.height);
+      var dWidth = c.height * imgRatio;
+      var dHeight = c.height;
+      var dx = (c.width - dWidth) / 2;
+      var dy = 0;
+      console.log('dx=' + dx + ',dy=' + dy);
+      ctx.drawImage(img, dx, dy, dWidth, dHeight);
       return;
     }
 
     var fat = cRatio < imgRatio;
     if (fat) {
       console.log('fat');
-      ctx.drawImage(img, 0, 0, c.width, c.width / imgRatio);
+      var dWidth = c.width;
+      var dHeight = c.width / imgRatio;
+      var dx = 0;
+      var dy = (c.height - dHeight) / 2;
+      console.log('dx=' + dx + ',dy=' + dy);
+      ctx.drawImage(img, dx, dy, dWidth, dHeight);
       return;
     }
   }
