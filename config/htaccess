@@ -1,4 +1,4 @@
 RewriteEngine on
-RewriteCond "%{REQUEST_URI}" "!=/index.html"
+RewriteCond "%{REQUEST_URI}" "!index\..*"
 RewriteCond "%{REQUEST_URI}" "!.well-known/.*$"
 RewriteRule ".*" "/index.html" [L]
